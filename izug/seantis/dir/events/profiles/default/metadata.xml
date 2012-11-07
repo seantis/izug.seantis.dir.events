@@ -4,5 +4,6 @@
         <dependency>profile-seantis.dir.events:default</dependency>
         <dependency>profile-izug.basetheme:default</dependency>
         <dependency>profile-izug.basetheme:zug_directories</dependency>
+        <dependency>profile-collective.geo.zugmap:default</dependency>
     </dependencies>
 </metadata>

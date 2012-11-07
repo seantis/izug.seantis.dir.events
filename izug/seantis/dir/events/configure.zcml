@@ -38,4 +38,11 @@
         for="Products.CMFPlone.interfaces.IPloneSiteRoot" 
         />
 
+    <!-- Run custom setup code -->
+    <genericsetup:importStep
+        name="izug.seantis.dir.events"
+        title="custom setup code for izug.seantis.dir.events"
+        description=""
+        handler="izug.seantis.dir.events.setuphandlers.custom_setup" />
+
 </configure>
