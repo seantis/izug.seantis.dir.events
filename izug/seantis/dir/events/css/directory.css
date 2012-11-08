@@ -73,7 +73,7 @@
 .directoryMarker {
     right: auto;
     left: -3px !important;
-    top: 5px !important; 
+    top: 2px !important; 
 }
 
 /* events list */
@@ -125,13 +125,16 @@
     color: black;
 }
 
+#directoryResultList .eventtags-list {
+    margin-left: 12px;
+}
+
 /* submitted events */
 #directoryResultList .event-state-submitted {
     background-color: white;   
 }
 
 /* event workflow */
-
 .event-workflow .event-state {
     margin-left: 12px
 }
