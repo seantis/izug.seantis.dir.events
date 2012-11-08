@@ -1,5 +1,10 @@
 /* izug.seantis.dir.events directory css */
 
+/* container */
+#directoryInfo {
+    margin-top: 15px !important;
+}
+
 /* columns */
 .event-navigation {
    width: 150px;
@@ -64,9 +69,20 @@
     color: #0072ba !important;
 }
 
+/* map marker */
+.directoryMarker {
+    right: auto;
+    left: -3px !important;
+    top: 5px !important; 
+}
+
 /* events list */
 #directoryResultList {
     border-top: none !important;   
+}
+
+#directoryResultList .eventgroup .event {
+    margin-top: 5px;
 }
 
 #directoryResultList .eventgroup-title {
@@ -87,4 +103,40 @@
 
 #directoryResultList .directoryResult:last-child .directoryInfoText {
     border-bottom: none;   
+}
+
+#directoryResultList .event-image {
+    float: right;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 5px 0;
+    
+}
+
+#directoryResultList .event-text {
+    float: left;
+    margin-left: 12px;
+    width: 280px
+}
+
+#directoryResultList .timerange {
+    font-size: 11px;
+    color: black;
+}
+
+/* submitted events */
+#directoryResultList .event-state-submitted {
+    background-color: white;   
+}
+
+/* event workflow */
+
+.event-workflow .event-state {
+    margin-left: 12px
+}
+
+.event-workflow .event-actions a {
+    background-color: white !important;
+    padding-right: 0 !important;
 }

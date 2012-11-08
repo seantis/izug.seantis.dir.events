@@ -6,6 +6,7 @@
       </xsl:copy>
     </xsl:template>
 
+    <!-- Add navigation tree classes to event navigation, making it look like plone's portal navigation -->
     <xsl:template match="//*[@class = 'event-navigation']/div/ul">
         <dl class="portlet portletNavigationTree"> 
             <dd class="portletItem lastItem">
@@ -34,6 +35,14 @@
         <xsl:attribute name="class">
             <xsl:value-of select="str:replace(str:replace(., 'event-navigation-link', ''), 'selected', 'navTreeCurrentNode navTreeCurrentItem')"/>
         </xsl:attribute>
+    </xsl:template>
+
+    <!-- Add a visual clear after the event-text for the floating -->
+    <xsl:template match="//*[@class = 'event-text']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+        <div class="visualClear"></div>
     </xsl:template>
 </rules>
 
