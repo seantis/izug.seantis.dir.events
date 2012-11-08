@@ -45,4 +45,7 @@
         description=""
         handler="izug.seantis.dir.events.setuphandlers.custom_setup" />
 
+    <!-- Diazo Theme -->
+    <plone:static name="izug.seantis.dir.events.theme" directory="theme" type="theme" />
+
 </configure>

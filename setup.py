@@ -26,6 +26,7 @@ setup(name='izug.seantis.dir.events',
       install_requires=[
           'seantis.dir.events',
           'izug.basetheme',
+          'plone.app.theming'
       ],
       entry_points="""
       [z3c.autoinclude.plugin]
