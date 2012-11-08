@@ -1,0 +1,90 @@
+/* izug.seantis.dir.events directory css */
+
+/* columns */
+.event-navigation {
+   width: 150px;
+   margin-right: 25px;
+}
+
+#directoryResultList {
+    width: 400px !important; 
+    margin-right: 25px;
+}
+
+.event-sidebar {
+    width: 360px;
+}
+
+/* map */
+#directoryResultMap {
+    width: 100% !important;
+    height: 300px !important;
+    float: none !important;
+}
+
+#directoryResultMap #default-cgmap {
+    height: 300px;   
+}
+
+/* event navigation */
+.event-navigation {
+   font-size: 10px;
+}
+
+.event-navigation h3 {
+   font-size: 12px;
+   font-weight: normal;   
+   margin-bottom: 5px
+}
+
+.event-navigation dd {
+    margin: 0 !important;
+}
+
+.event-navigation ul li {
+    margin: 0 !important;   
+}
+
+.event-navigation ul li a.navTreeCurrentNode {
+    font-weight: bold;   
+}
+
+/* submit your event */
+.your-event {
+    border: none;   
+    padding: 0;
+}
+
+.your-event p {
+    color: black;
+    font-size: 11px;      
+}
+
+.your-event a {
+    color: #0072ba !important;
+}
+
+/* events list */
+#directoryResultList {
+    border-top: none !important;   
+}
+
+#directoryResultList .eventgroup-title {
+    background-color: #0072ba;
+    border-radius: 0; 
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#directoryResultList .directoryInfoText h3 {
+    margin: 0;
+}
+
+#directoryResultList .directoryInfoText h3 a {
+    padding: 0;
+}
+
+#directoryResultList .directoryResult:last-child .directoryInfoText {
+    border-bottom: none;   
+}

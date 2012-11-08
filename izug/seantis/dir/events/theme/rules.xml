@@ -6,20 +6,14 @@
       </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="a[@class = 'selected']">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="class"><xsl:value-of select="'navTreeCurrentNode navTreeCurrentItem'"/></xsl:attribute>
-            <xsl:apply-templates select="node()"/>
-        </xsl:copy>
-    </xsl:template>
-
     <xsl:template match="//*[@class = 'event-navigation']/div/ul">
         <dl class="portlet portletNavigationTree"> 
             <dd class="portletItem lastItem">
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
-                    <xsl:attribute name="class"><xsl:value-of select="'navTree navTreeLevel0'"/></xsl:attribute>
+                    <xsl:attribute name="class">
+                        <xsl:value-of select="'navTree navTreeLevel0'"/>
+                    </xsl:attribute>
                     <xsl:apply-templates select="node()"/>
                 </xsl:copy>
             </dd>
@@ -29,8 +23,18 @@
     <xsl:template match="//*[@class = 'event-navigation']/div/ul/li">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="class"><xsl:value-of select="'navTreeItem visualNoMarker navTreeFolderish'"/></xsl:attribute>
+            <xsl:attribute name="class">
+                <xsl:value-of select="'navTreeItem visualNoMarker navTreeFolderish'"/>
+            </xsl:attribute>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
+
+    <xsl:template match="//a[contains(@class, 'event-navigation-link')]/@class">
+        <xsl:attribute name="class">
+            <xsl:value-of select="str:replace(str:replace(., 'event-navigation-link', ''), 'selected', 'navTreeCurrentNode navTreeCurrentItem')"/>
+        </xsl:attribute>
+    </xsl:template>
 </rules>
+
+ 
