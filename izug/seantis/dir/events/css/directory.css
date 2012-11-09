@@ -289,6 +289,10 @@ form span.required {
     margin-left: 0 !important;
 }
 
+#content .event-view .event-details ul li {
+    margin-bottom: 0;
+}
+
 .event-details div h3 {
     background: none;
     box-shadow: none;
