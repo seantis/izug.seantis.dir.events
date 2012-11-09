@@ -181,6 +181,35 @@ form span.required {
     display: inline-block;
 }
 
+/* the recurrence widget is scrambled egg on izug.basetheme */
+.rioccurrences .occurrence .action {
+    position: absolute;
+    right: 0;
+}
+
+.rioccurrences .occurrence .action a {
+    float: none;
+    display: inline-block;
+    position: relative;
+    top: -6px;
+}
+
+.rirefreshbutton {
+    position: relative;
+    left: 9px;
+    top: -8px;   
+}
+
+.riform h1 {
+    color: white !important;   
+    font-size: 14px !important;
+}
+
+.riform h2 {
+    color: black !important;   
+    font-size: 12px !important;
+}
+
 /* detail view */
 #directoryDetails {
     padding-top: 15px !important;
@@ -255,4 +284,13 @@ form span.required {
 .event-view .event-details a.visited,
 .event-view .event-details a:hover {
     color: #AE1E00;
+}
+
+/* event-preview */
+.event-preview-form .event-title {
+    margin-top: 20px !important;   
+}
+
+.event-submit-help {
+    margin: 25px 0 29px 25px;   
 }
