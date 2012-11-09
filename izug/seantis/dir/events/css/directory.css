@@ -2,6 +2,11 @@
 
 /* start */
 
+#directorySearch {
+    border-bottom: 1px solid #0072ba !important;
+    padding-bottom: 5px;
+}
+
 #landingPageIntro {
     width: 960px;
 }
@@ -35,6 +40,7 @@
 .event-navigation {
     width: 150px;
     margin-right: 30px;
+    margin-top: 1px;
 }
 
 #directoryResultList {
@@ -113,11 +119,14 @@
 }
 
 #directoryResultList .eventgroup-title {
-    background-color: #0072ba;
+    background-color: white;
+    color: #00538C;
     border-radius: 0; 
-    padding: 4px 10px;
+    padding: 4px 0;
     font-size: 13px;
-    font-weight: normal;
+    font-weight: bold;
+    border-bottom: 1px solid #b5d5ea;
+    text-align: right;
 }
 
 #directoryResultList .directoryInfoText h3 {
@@ -126,6 +135,10 @@
 
 #directoryResultList .directoryInfoText h3 a {
     padding: 0;
+}
+
+#directoryResultList .directoryResult .directoryInfoText {
+    border-bottom: 1px solid #efefef;   
 }
 
 #directoryResultList .directoryResult:last-child .directoryInfoText {
@@ -138,13 +151,16 @@
     border: none;
     padding: 0;
     margin: 5px 0;
-    
 }
 
 #directoryResultList .event-text {
     float: left;
     margin-left: 12px;
     width: 280px
+}
+
+#directoryResultList .event-text h3 {
+    font-size: 12px;
 }
 
 #directoryResultList .timerange {
