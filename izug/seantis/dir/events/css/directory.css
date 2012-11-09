@@ -1,5 +1,14 @@
 /* izug.seantis.dir.events directory css */
 
+/* start */
+
+#landingPageIntro #landingPageText {
+    width: 955px;
+    float: none;
+    padding: 0 !important;
+    padding: 25px 15px 0 20px !important;
+}
+
 /* container */
 #directoryInfo {
     margin-top: 15px !important;
@@ -142,4 +151,14 @@
 .event-workflow .event-actions a {
     background-color: white !important;
     padding-right: 0 !important;
+}
+
+/* submit form */
+form span.required {
+    background-color: #ff1a12;
+    height: 5px;
+    width: 5px;
+    position: relative;
+    bottom: 1px;
+    display: inline-block;
 }
