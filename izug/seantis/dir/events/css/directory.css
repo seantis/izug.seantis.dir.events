@@ -180,3 +180,79 @@ form span.required {
     bottom: 1px;
     display: inline-block;
 }
+
+/* detail view */
+#directoryDetails {
+    padding-top: 15px !important;
+}
+
+.event-view {
+    background: none;   
+    margin: 0;
+    padding: 0;
+}
+
+.event-view .event-title {
+    border: none;
+    margin: 0 0 15px 20px;
+    padding: 0;
+}
+
+.event-view .event-date {
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.event-view .event-image {
+    margin: 0 25px 20px 20px;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.event-view .descriptions .short {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.event-view .descriptions .long {
+    line-height: 14px;
+}
+
+.event-details > div {
+    background: none;
+}
+
+.event-view .event-details * {
+    padding-left: 0 !important;
+    color: black;
+    line-height: 14px;
+}
+
+#content .event-view .event-details ul {
+    padding-left: 0 !important;
+    margin-bottom: 0;
+    margin-left: 0 !important;
+}
+
+.event-details div h3 {
+    background: none;
+    box-shadow: none;
+    border-top: 2px solid #efefef;
+    font-size: 11px; 
+    color: black;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.event-view .event-details a {
+    color: #00538C;
+}
+
+.event-view .event-details a.selected,
+.event-view .event-details a.visited,
+.event-view .event-details a:hover {
+    color: #AE1E00;
+}
