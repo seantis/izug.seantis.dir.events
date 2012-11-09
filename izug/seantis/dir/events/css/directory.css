@@ -36,6 +36,11 @@
     margin-top: 15px !important;
 }
 
+/* highlight the event title when hovering over a marker */
+#content .groupSelection h3 * {
+    color: #AE1E00 !important;
+}
+
 /* columns */
 .event-navigation {
     width: 150px;
