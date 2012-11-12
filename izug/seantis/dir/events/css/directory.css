@@ -94,17 +94,26 @@
 
 /* submit your event */
 .your-event {
-    border: none;   
-    padding: 0;
+    border: 1px solid #dedede;
+    padding: 9px 9px 13px 13px;
+    
 }
 
 .your-event p {
     color: black;
+    font-weight: bold;
     font-size: 11px;      
 }
 
 .your-event a {
-    color: #0072ba !important;
+    color: #00538C !important;
+    font-size: 1em;
+    text-align: left;
+}
+
+.your-event a:before {
+    content: "";
+
 }
 
 /* map marker */
