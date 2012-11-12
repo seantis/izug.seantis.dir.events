@@ -1,5 +1,9 @@
 /* izug.seantis.dir.events directory css */
 
+.portalMessage {
+    margin-bottom: 12px !important;   
+}
+
 /* start */
 
 #directorySearch {
