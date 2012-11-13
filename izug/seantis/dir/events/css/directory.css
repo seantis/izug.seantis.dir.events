@@ -1,5 +1,10 @@
 /* izug.seantis.dir.events directory css */
 
+.actionMenuContent #seantis-dir-events-item,
+.actionMenuContent #seantis-dir-events-directory {
+    background: none;    
+}
+
 .portalMessage {
     margin-bottom: 12px !important;   
 }
