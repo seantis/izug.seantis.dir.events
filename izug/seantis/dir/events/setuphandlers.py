@@ -1,8 +1,10 @@
 from decimal import Decimal
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
+from Products.CMFCore.utils import getToolByName
 from collective.geo.settings.interfaces import IGeoSettings
-    
+from izug.seantis.dir.events.guard import groups
+
 def setup_geo(site):
     registry = getUtility(IRegistry)
     
@@ -34,7 +36,15 @@ def setup_geo(site):
     geo_settings.latitude = Decimal("47.164210081887184")
     geo_settings.zoom = Decimal("11")
 
+def setup_groups(site):
+
+    group_tool = getToolByName(site, 'portal_groups')
+
+    for group, title in groups.items():
+        group_tool.addGroup(group, ['Reviewer'], [], title=title)
+
 def custom_setup(context):
     
     if 'izug/seantis' in context._profile_path:
         setup_geo(context.getSite())
+        setup_groups(context.getSite())
