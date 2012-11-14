@@ -23,10 +23,6 @@
     <browser:resourceDirectory
         name="izug.seantis.dir.events.stylesheets"
         directory="css"/>
-    
-    <browser:resourceDirectory
-        name="izug.seantis.dir.events.javascript"
-        directory="js"/>
 
     <!-- Register an extension profile to make the product installable -->
     <genericsetup:registerProfile
