@@ -68,9 +68,18 @@
                     </input>
                 </form>
             </div>
-            
+
             <xsl:copy-of select="//*[@id='directoryResultMap']" />
         </div>
+    </xsl:template>
+
+    <!-- The search field gets a placeholder instead of a label -->
+    <xsl:template match="//*[@id='searchtext']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:attribute name="placeholder"> Inhalt durchsuchen</xsl:attribute>
+            <xsl:apply-templates select="node()"/>
+        </xsl:copy>
     </xsl:template>
 </rules>
 
