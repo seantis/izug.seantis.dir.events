@@ -227,6 +227,14 @@ form span.required {
     display: inline-block;
 }
 
+.event-submit-form #form-widgets-title {
+    width: 100%;
+}
+
+.event-submit-form textarea {
+    width: 99.5%;   
+}
+
 /* the recurrence widget is scrambled egg on izug.basetheme */
 .rioccurrences .occurrence .action {
     position: absolute;
