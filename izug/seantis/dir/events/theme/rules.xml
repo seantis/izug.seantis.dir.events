@@ -1,4 +1,5 @@
 <rules xmlns="http://namespaces.plone.org/diazo" xmlns:css="http://namespaces.plone.org/diazo/css" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html" />
 
     <xsl:template match="@*|node()">
       <xsl:copy>
@@ -80,6 +81,24 @@
             <xsl:attribute name="placeholder"> Inhalt durchsuchen</xsl:attribute>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
+    </xsl:template>
+
+    <!-- The item detail view gets a back button -->
+    <xsl:template match="//*[@id='directoryDetails']/div[1]/div[1]/div[1]/div">
+        <div class="event-date">
+            <div style="float: left;">
+                <xsl:copy-of select="./span" />
+            </div>
+            <div style="float: right;">
+                <a>
+                    <xsl:attribute name="href">
+                        <xsl:value-of select="//*[@id='portal-breadcrumbs']/span[2]/a/@href" />
+                    </xsl:attribute>
+                    Zurück
+                </a>
+            </div>
+            <div class="visualClear"></div>
+        </div>
     </xsl:template>
 </rules>
 

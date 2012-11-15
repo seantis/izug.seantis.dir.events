@@ -78,6 +78,10 @@
     height: 300px;   
 }
 
+#directoryDetails .event-sidebar {
+    margin-top: 38px;   
+}
+
 /* event navigation */
 .event-navigation {
    font-size: 10px;
@@ -218,6 +222,7 @@ form span.required {
     height: 5px;
     width: 5px;
     position: relative;
+    z-index: 100;
     bottom: 1px;
     display: inline-block;
 }
@@ -274,6 +279,12 @@ form span.required {
     padding: 0 0 5px 0;
     text-align: right;
     border-bottom: 1px solid #b5d5ea;
+    display: relative;
+    width: 940px;
+}
+
+.event-view .event-date span {
+    margin-right: 10px;   
 }
 
 .event-view .event-image {

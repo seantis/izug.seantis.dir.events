@@ -11,3 +11,7 @@ div#landingPageIntro {
     position: relative;
     left: -6px;
 }
+
+.event-view .event-date {
+    width: 934px !important;
+}
