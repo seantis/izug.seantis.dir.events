@@ -103,9 +103,11 @@
 
 /* submit your event */
 .your-event {
-    border: 1px solid #dedede;
-    padding: 9px 9px 13px 13px;
-    
+    border: none;
+    padding: 0;
+    text-align: left;
+    margin-top: -9px;
+    margin-bottom: 10px
 }
 
 .your-event p {

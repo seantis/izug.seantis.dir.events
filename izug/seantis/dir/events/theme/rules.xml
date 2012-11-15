@@ -51,6 +51,27 @@
             <xsl:value-of select="str:replace(., 'responsive-events', '')"/>
         </xsl:attribute>
     </xsl:template>    
+
+    <!-- Your Event should be a button without helptext -->
+    <xsl:template match="//div[contains(@class, 'event-sidebar')]">
+        <div class="event-sidebar">
+            <div class="your-event">
+                <form method="get">
+                    <xsl:attribute name="action">
+                        <xsl:value-of select="div[contains(@class, 'your-event')]/a/@href" />
+                    </xsl:attribute>
+
+                    <input type="submit" class="context">
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="div[contains(@class, 'your-event')]/a" />
+                        </xsl:attribute>
+                    </input>
+                </form>
+            </div>
+            
+            <xsl:copy-of select="//*[@id='directoryResultMap']" />
+        </div>
+    </xsl:template>
 </rules>
 
  
