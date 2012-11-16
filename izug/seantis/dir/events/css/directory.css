@@ -247,6 +247,10 @@ form span.required {
     clear: none;
 }
 
+.event-submit-form #map .geocoder-wrapper {
+    display: none;   
+}
+
 /* the recurrence widget is scrambled egg on izug.basetheme */
 .rioccurrences .occurrence .action {
     position: absolute;
