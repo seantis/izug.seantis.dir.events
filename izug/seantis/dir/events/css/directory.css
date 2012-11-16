@@ -1,367 +1,367 @@
-/* izug.seantis.dir.events directory css */
+/* seantis.dir.events */
 
-.actionMenuContent #seantis-dir-events-item,
-.actionMenuContent #seantis-dir-events-directory {
-    background: none;    
+/* hide the coordinates field on the event submission form */
+#form-widgets-coordinates, #form-widgets-wkt {
+    display: none;
 }
 
-.portalMessage {
-    margin-bottom: 12px !important;   
+.no-results {
+    text-align: center;
 }
 
-/* start */
-
-#directorySearch {
-    border-bottom: 1px solid #0072ba !important;
-    padding-bottom: 5px;
+/* right align the directory marker */
+.directoryMarker {
+    right: 0;
 }
 
-#landingPageIntro {
-    width: 960px;
-}
-
-#landingPageIntro #landingPageText {
-    width: 960px;
-    float: none;
-    margin: 0 !important;
-    padding: 15px 0 20px 0 !important;
-}
-
-#landingPageIntro #landingPageText h2,
-#landingPageIntro #landingPageText div {
-    width: 700px;
-    margin-left: 20px;
-}
-
-#landingPageIntro #landingPageText #landingPageImage {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 200px;
-    display: block !important;
-}
-
-/* container */
 #directoryInfo {
-    margin-top: 15px !important;
+    margin-top: 22px;   
+}
+
+#directoryResultList {
+    float: left;
+    width: 40%;
+    min-width: 300px;
+    margin-right: 3%;
+}
+
+.event-sidebar {
+    float: left;
+    width: 38.8%;
+    min-width: 300px;
 }
 
 /* highlight the event title when hovering over a marker */
 #content .groupSelection h3 * {
-    color: #AE1E00 !important;
+    color: #75AD0A !important;
 }
 
-/* columns */
+/* event navigation on the left */
 .event-navigation {
-    width: 150px;
-    margin-right: 30px;
-    margin-top: 1px;
+    float: left;
+    width: 15%;
+    min-width: 100px;
+    margin: 0 3% 0 0;
 }
 
-#directoryResultList {
-    width: 400px !important; 
-    margin-right: 25px;
-}
-
-.event-sidebar {
-    width: 350px;
-    float: right;
-}
-
-/* map */
-#directoryResultMap {
-    width: 100% !important;
-    height: 300px !important;
-    float: none !important;
-}
-
-#directoryResultMap #default-cgmap {
-    height: 300px;   
-}
-
-#directoryDetails .event-sidebar {
-    margin-top: 38px;   
-}
-
-/* event navigation */
-.event-navigation {
-   font-size: 10px;
+.event-navigation > div {
+    margin-bottom: 20px;   
 }
 
 .event-navigation h3 {
-   font-size: 12px;
-   font-weight: normal;   
-   margin-bottom: 5px
-}
-
-.event-navigation dd {
-    margin: 0 !important;
-}
-
-.event-navigation ul li {
-    margin: 0 !important;   
-}
-
-.event-navigation ul li a.navTreeCurrentNode {
-    font-weight: bold;   
-}
-
-/* submit your event */
-.your-event {
-    border: none;
-    padding: 0;
-    text-align: left;
-    margin-top: -9px;
+   font-size: 1.3em;  
     margin-bottom: 10px
+
 }
 
-.your-event p {
-    color: black;
+a.event-navigation-link {
+    display: block;
+    border: 1px solid #efefef !important;
+    border-width: 1px 1px 1px 10px !important;
+    padding: 5px;
+}
+
+a.event-navigation-link.selected {
     font-weight: bold;
-    font-size: 11px;      
 }
 
-.your-event a {
-    color: #00538C !important;
-    font-size: 1em;
-    text-align: left;
+a.event-navigation-link.selected, 
+#content a.event-navigation-link:hover {
+    color: black !important;
+    border: 1px solid #0083bae !important;
+    border-width: 1px 1px 1px 10px !important;
 }
 
-.your-event a:before {
-    content: "";
-
+.event-navigation-admin a.event-navigation-link.selected, 
+#content .event-navigation-admin a.event-navigation-link:hover {
+    border-color: #de7700 !important;
 }
 
-/* map marker */
-.directoryMarker {
-    right: auto;
-    left: -3px !important;
-    top: 2px !important; 
+#content .event-navigation-ical a.event-navigation-link:hover {
+    border-color: #75ad0a !important;
 }
 
-/* events list */
-#directoryResultList {
-    border-top: none !important;   
-}
-
-#directoryResultList .eventgroup .event {
-    margin-top: 5px;
-}
-
-#directoryResultList .eventgroup-title {
-    background-color: white;
-    color: #00538C;
-    border-radius: 0; 
-    padding: 4px 0;
-    font-size: 13px;
-    font-weight: bold;
-    border-bottom: 1px solid #b5d5ea;
-    text-align: right;
-}
-
-#directoryResultList .directoryInfoText h3 {
+#content .event-navigation ul {
+    list-style-type: none;
     margin: 0;
 }
 
-#directoryResultList .directoryInfoText h3 a {
-    padding: 0;
+/* event list display */
+.eventgroup-title {
+    font-weight: bold;
+    color: white;
+    background-color: #195c90;
+    padding: 2px 7px;
+    border-radius: 2px;
 }
 
-#directoryResultList .directoryResult .directoryInfoText {
-    border-bottom: 1px solid #efefef;   
+.eventgroup .event:first-child {
+    border-top: none;
 }
 
-#directoryResultList .directoryResult:last-child .directoryInfoText {
-    border-bottom: none;   
+#content .eventgroup .eventtag,
+#content .event-view .eventtag {
+    font-size: 0.9em;
+    line-height: 1.9em;
+    background-color: #ddd;
+    display: inline;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    padding: 1px 4px !important;
+    border-radius: 2px;
+
 }
 
-#directoryResultList .event-image {
+.eventtags {
+    width: 50%;
+    float:left;   
+}
+
+.event-view .eventtags {
+    margin: 15px 0 20px 0;   
+}
+
+.timerange {
     float: right;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 5px 0;
+    color: #777;
+    display: inline-block;
 }
 
-#directoryResultList .event-text {
+.event-image {
     float: left;
-    margin-left: 12px;
-    width: 280px
+    padding: 5px;
+    margin: 5px 7px 0 0;
+    border: 1px solid #dce4eb;
+    background-color: #efefef;   
 }
 
-#directoryResultList .event-text h3 {
-    font-size: 12px;
-}
-
-#directoryResultList .timerange {
-    font-size: 11px;
-    color: black;
-}
-
-#directoryResultList .eventtags {
-    margin-left: 12px;
-}
-
-/* submitted events */
-#directoryResultList .event-state-submitted {
-    background-color: white;   
-}
-
-/* event workflow */
-.event-workflow .event-state {
-    margin-left: 12px
-}
-
-.event-workflow .event-actions a {
-    background-color: white !important;
-    padding-right: 0 !important;
-}
-
-/* submit form */
-form span.required {
-    background-color: #ff1a12;
-    height: 5px;
-    width: 5px;
-    position: relative;
-    z-index: 100;
-    bottom: 1px;
-    display: inline-block;
-}
-
-.event-submit-form #form-widgets-title {
-    width: 100%;
-}
-
-.event-submit-form textarea {
-    width: 99.5%;   
-}
-
-/* the recurrence widget is scrambled egg on izug.basetheme */
-.rioccurrences .occurrence .action {
-    position: absolute;
-    right: 0;
-}
-
-.rioccurrences .occurrence .action a {
-    float: none;
-    display: inline-block;
-    position: relative;
-    top: -6px;
-}
-
-.rirefreshbutton {
-    position: relative;
-    left: 9px;
-    top: -8px;   
-}
-
-.riform h1 {
-    color: white !important;   
-    font-size: 14px !important;
-}
-
-.riform h2 {
-    color: black !important;   
-    font-size: 12px !important;
-}
-
-/* detail view */
-#directoryDetails {
-    padding-top: 15px !important;
-}
-
-.event-view {
-    background: none;   
-    margin: 0;
-    padding: 0;
-}
-
-.event-view .event-title {
-    border: none;
-    margin: 0 0 15px 20px;
-    padding: 0;
-}
-
-.event-view .event-date {
-    color: #00538C;
-    margin: 0;
-    padding: 0 0 5px 0;
-    text-align: right;
-    border-bottom: 1px solid #b5d5ea;
-    display: relative;
-    width: 940px;
-}
-
-.event-view .event-date span {
-    margin-right: 10px;   
+#content .event-image a.link-overlay {
+    border-bottom: none !important;   
 }
 
 .event-view .event-image {
-    margin: 0 25px 20px 20px;
-    border: none;
-    background: none;
-    padding: 0;
+    margin: 0 10px 5px 20px;
 }
 
-.event-view .descriptions .short {
-    color: black;
-    font-size: 12px;
+.event-view {
+    float: left;
+    width: 61.2%;   
+    padding-right: 25px;
+    box-sizing: border-box;
+    background: url(data:image/gif;base64,R0lGODlhCgABAIAAAN3d3QAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCOTA4OEVEMTA5NkMxMUUyODJBQTk2RkJDNzQyODE3OCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCOTA4OEVEMjA5NkMxMUUyODJBQTk2RkJDNzQyODE3OCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI5MDg4RUNGMDk2QzExRTI4MkFBOTZGQkM3NDI4MTc4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI5MDg4RUQwMDk2QzExRTI4MkFBOTZGQkM3NDI4MTc4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAoAAQAAAgOEjwUAOw==) repeat-y;   
+}
+
+@media all and (max-width: 790px) {
+
+    /* disable responsive design by removing .responseive-events from the views */
+
+    /* the missing space is no accident*/
+    .responsive-events.event-view {
+        float: none;
+        width: auto;   
+    }
+
+    .responsive-events #directoryResultList {
+        float: none;
+        width: auto;
+        clear: both;   
+    }
+
+    .responsive-events .event-navigation {
+        float: none;
+        clear:both;
+        width: auto;   
+    }
+
+    .responsive-events .event-sidebar {
+        float: none;
+        width: 96.1%;
+        margin-top: 25px;
+        clear:both;
+    }
+}
+
+.event-title {
+    border: 1px solid #0083be;   
+    border-width: 0 0 0 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.event-date {
+    color: #0083be;
     font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
-.event-view .descriptions .long {
-    line-height: 14px;
+.descriptions .short {
+    font-size: 1.3em;
+    color: #444;
+    margin: 0 0 12px 0;
+}
+
+.descriptions .long {
+    color: #333;
+
+}
+
+.descriptions, .event-details {
+    margin-left: 20px;
+}
+
+.event-details h3 {   
+    font-size: 1.1em;
+    background-color: #efefef;
+    color: #666;
+    font-weight: normal;
+    padding: 3px 10px;
+    box-shadow: 0 1px 2px #ccc;
+    margin-bottom: 5px;
 }
 
 .event-details > div {
-    background: none;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding-bottom: 5px; 
+    background-color: #fafafa;
 }
 
-.event-view .event-details * {
-    padding-left: 0 !important;
-    color: black;
-    line-height: 14px;
+.admin-filter, .ical-links {
+     margin-top: 20px;   
 }
 
-#content .event-view .event-details ul {
-    padding-left: 0 !important;
-    margin-bottom: 0;
-    margin-left: 0 !important;
+.event-details > div > div {
+    padding-left: 10px;   
 }
 
-#content .event-view .event-details ul li {
-    margin-bottom: 0;
+.event-details > div:last-child {
+    margin-bottom: 0;   
 }
 
-.event-details div h3 {
-    background: none;
-    box-shadow: none;
-    border-top: 1px solid #efefef;
-    font-size: 11px; 
-    color: black;
-    font-weight: bold;
-    margin-bottom: 0;
+.location .locality, .organizer .name {
+    color: #0083be;   
 }
 
-.event-view .event-details a {
-    color: #00538C;
+.organizer .contact {
+    margin-top: 10px;
 }
 
-.event-view .event-details a.selected,
-.event-view .event-details a.visited,
-.event-view .event-details a:hover {
-    color: #AE1E00;
+.attachments ul li, .calendars ul li {
+    list-style: none;
 }
 
-/* event-preview */
-.event-preview-form .event-title {
-    margin-top: 20px !important;   
+.attachments ul, .calendars ul {
+    margin-left: 10px !important;
 }
 
-.event-submit-help {
-    margin: 25px 0 29px 25px;   
+/* submit your own event box */
+
+.your-event {
+    margin: 20px 0 0 0;
+    padding: 15px 20px 20px 20px;
+    border: 1px solid #ccc;
+    border-width: 1px 1px 1px 10px;
+    border-radius: 2px;
 }
 
-/* hide directory search form selection label */
-.seantis-directory-search .directorySearchFormSelection label {
-    visibility: hidden;
+.your-event p {
+    font-size: 1.1em;   
+    line-height: 1.4em;
+    color: #777;
+}
+
+.your-event a {
+    border: none !important;
+    text-align: right;
+    width: 100% !important;
+    display: block;
+    font-size: 1.8em;
+    color: #0085be !important;
+}
+
+.your-event a:before {
+    content: "► ";   
+}
+
+/* submit your own event form */
+
+.event-submit-form #form-widgets-coordinates {
+    display: none;
+}
+
+.event-submit-form #form-widgets-short_description {
+    height: 45px;
+    resize: none;   
+}
+
+.event-submit-form #geoshapemap {
+    height: 400px;  
+}
+
+.event-submit-form .geocoder-wrapper label {
+    font-weight: normal;
+    color: #777;
+}
+
+form.change-event {
+    margin-bottom: 20px;   
+}
+
+
+/* event states */
+
+.event-state-submitted {
+   background-color: #ddd
+}
+
+.event-state-submitted h3 a,
+.event-state-submitted div {
+    color: #777 !important;
+}
+
+/* on the event preview form the submitter group is always shown at the bottom */
+.event-preview-form #fieldset-2 {
+    display: block !important;
+    border: 1px solid #ccc !important;
+    padding-top: 14px;
+    background-color: #efefef;
+}
+
+.event-preview-form .lastFormTab {
+    display: none !important;   
+}
+
+/* event-actions */
+
+.event-workflow {
+    clear:both;
+    text-align: right;
+    position: relative;
+    top: 5px;
+}
+
+.event-workflow .event-actions {
+    width: 50%;
+    float: right;
+}
+
+.event-workflow .event-state {
+    float: left;   
+    text-align: left;
+    background-color: #eee;
+    padding: 0 4px;
+    border-radius: 2px;
+    color: #888;
+}
+
+.event-actions a {
+    background-color: #fffb97;
+    padding: 1px 5px;
+    border: none !important;
+    border-radius: 2px;
 }
