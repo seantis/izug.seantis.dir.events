@@ -20,17 +20,6 @@
     width: 58% !important;
 }
 
-.seantis-directory-filter .context,
-.seantis-directory-search .context {
-    margin-left: -2px !important;   
-    padding-left: 13px !important;
-    padding-right: 13px !important;
-}
-
-.seantis-directory-search {
-    width: 42% !important;   
-}
-
 #landingPageIntro {
     width: 960px;
 }
@@ -260,6 +249,12 @@ form span.required {
     float: left;
     width: 45%;
     clear: none;
+}
+
+.event-submit-form #formfield-form-widgets-cat1.error,
+.event-submit-form #formfield-form-widgets-cat2.error {
+    background-color: white;
+    border: none;
 }
 
 .event-submit-form #map .geocoder-wrapper {
