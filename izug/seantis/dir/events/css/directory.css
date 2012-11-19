@@ -16,6 +16,21 @@
     padding-bottom: 5px;
 }
 
+.seantis-directory-filter {
+    width: 58% !important;
+}
+
+.seantis-directory-filter .context,
+.seantis-directory-search .context {
+    margin-left: -2px !important;   
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+}
+
+.seantis-directory-search {
+    width: 42% !important;   
+}
+
 #landingPageIntro {
     width: 960px;
 }
