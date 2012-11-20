@@ -242,15 +242,17 @@ form span.required:before {
 
 .event-submit-form #formfield-form-widgets-cat1,
 .event-submit-form #formfield-form-widgets-cat2 {
-    float: left;
-    width: 45%;
+    width: 47%;
+    min-height: 290px;
     clear: none;
 }
 
-.event-submit-form #formfield-form-widgets-cat1.error,
-.event-submit-form #formfield-form-widgets-cat2.error {
-    background-color: white;
-    border: none;
+.event-submit-form #formfield-form-widgets-cat1 {
+    float: left;   
+}
+.event-submit-form #formfield-form-widgets-cat2 {
+    float: right;
+    margin-right: 10px;
 }
 
 .event-submit-form #map .geocoder-wrapper {
@@ -379,6 +381,23 @@ form span.required:before {
     margin-top: 20px !important;   
 }
 
+.event-preview-form fieldset {
+    width: 935px !important;   
+}
+
+.event-preview-form fieldset .event-date {
+    width: 915px;   
+}
+
+.event-preview-form fieldset h1 {
+    display: none;
+}
+
+.event-preview-form fieldset .event-view {
+    margin-top: -15px;
+    margin-left: -10px;   
+}
+
 .event-submit-help {
     margin: 25px 0 29px 25px;   
 }
@@ -398,4 +417,17 @@ form span.required:before {
 
 .seantis-form-navigation ul.wizardSteps li.formTab a.selected {
     font-weight: bold;   
+}
+
+/* form errors */
+.event-submit-form .error,
+.event-finish-form .error {
+    margin-right: 20px;
+    width: 97.5%;   
+}
+
+.event-submit-form .error .error,
+.event-finish-form .error .error {
+    border: none;
+    padding: 0;
 }
