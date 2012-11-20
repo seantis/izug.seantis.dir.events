@@ -221,14 +221,10 @@
 }
 
 /* submit form */
-form span.required {
-    background-color: #ff1a12;
-    height: 5px;
-    width: 5px;
+
+form span.required:before {
+    content: "*";
     position: relative;
-    z-index: 100;
-    bottom: 1px;
-    display: inline-block;
 }
 
 .event-submit-form #form-widgets-title {
@@ -390,4 +386,16 @@ form span.required {
 /* hide directory search form selection label */
 .seantis-directory-search .directorySearchFormSelection label {
     visibility: hidden;
+}
+
+/* wizard form tabs */
+
+.seantis-form-navigation ul.wizardSteps li.formTab a {
+    padding-top: 0px;
+    background-color: transparent;
+    height: 17px;
+}
+
+.seantis-form-navigation ul.wizardSteps li.formTab a.selected {
+    font-weight: bold;   
 }
