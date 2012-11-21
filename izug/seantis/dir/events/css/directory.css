@@ -893,3 +893,18 @@ form span.required:before {
     background: none;
     padding-right: 0;
 }
+
+/* webcal */
+
+.link-webcal a {
+    display: block;
+    padding-bottom: 8px !important;
+    margin-top: 5px;
+    padding-left: 32px !important;
+    background-position: 12px 0 !important;
+}
+
+/* terms overlay */
+body.site-zug .pb-ajax {
+    max-width: 600px;   
+}

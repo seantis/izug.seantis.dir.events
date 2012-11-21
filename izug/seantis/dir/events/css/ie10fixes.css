@@ -12,4 +12,14 @@
     .event-view .event-date {
         width: 934px !important;
     }
+
+    .formControls input {
+        margin-right: 5px !important;
+    }
+
+    .event-submit-form input[type="radio"] {
+        margin-right: 5px !important;
+        padding-top: 1px !important;
+        margin-bottom: 2px !important;
+    }
 }

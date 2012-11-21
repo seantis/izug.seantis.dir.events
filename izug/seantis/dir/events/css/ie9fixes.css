@@ -15,3 +15,7 @@ div#landingPageIntro {
 .event-view .event-date {
     width: 934px !important;
 }
+
+.formControls input {
+    margin-right: 5px !important;
+}
