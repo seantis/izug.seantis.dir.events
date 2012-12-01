@@ -92,7 +92,7 @@
             <div style="float: right;">
                 <a>
                     <xsl:attribute name="href">
-                        <xsl:value-of select="//*[@id='portal-breadcrumbs']/span[2]/a/@href" />
+                        <xsl:value-of select="//*[@id='#parentlink']/a/@href" />
                     </xsl:attribute>
                     Zurück
                 </a>
