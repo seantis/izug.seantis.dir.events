@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2b' # aligned with seantis.dir.base
+version = '1.2b'  # aligned with seantis.dir.base
 
 setup(name='izug.seantis.dir.events',
       version=version,
@@ -26,6 +26,7 @@ setup(name='izug.seantis.dir.events',
       install_requires=[
           'seantis.dir.events',
           'izug.basetheme',
+          'collective.geo.zugmap',
           'plone.app.theming'
       ],
       entry_points="""
