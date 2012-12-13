@@ -1,11 +1,13 @@
 import csv
 from StringIO import StringIO
+import urllib2
 
 from Products.CMFCore.utils import getToolByName
 from five import grok
 from plone.app.event.base import default_timezone
 from plone.dexterity.utils import createContentInContainer
 from plone.directives import form
+from plone.namedfile import NamedImage
 from plone.namedfile.field import NamedFile
 from z3c.form import field
 from z3c.form.button import buttonAndHandler
@@ -59,7 +61,6 @@ class Import(form.Form):
         counter = 0
         for row in reader:
 
-            # The key does not exist, create a new object
             attributes = dict()
             for attr, ix in fieldmap.fieldmap.items():
                 if not attr in fieldmap.readonly:
@@ -74,12 +75,22 @@ class Import(form.Form):
             # We cannot properly decode the coordinates (because of nested ").
             attributes['coordinates_json'] = None
 
+            # Manipulate some attributes
             attributes['timezone'] = default_timezone()
 
+            # Fetch image form URL
+            image_url = row[-3]
+            if image_url:
+                response = urllib2.urlopen(image_url)
+                image = response.read()
+                attributes['image'] = NamedImage(image)
+
+            # Create event
             event = createContentInContainer(
                 self.context, fieldmap.typename, **attributes
             )
 
+            # Publish event
             workflow_tool.doActionFor(event, 'submit')
             workflow_tool.doActionFor(event, 'publish')
             counter += 1
