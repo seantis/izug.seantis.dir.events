@@ -7,8 +7,9 @@ from five import grok
 from plone.app.event.base import default_timezone
 from plone.dexterity.utils import createContentInContainer
 from plone.directives import form
+from plone.namedfile import NamedFile
 from plone.namedfile import NamedImage
-from plone.namedfile.field import NamedFile
+from plone.namedfile.field import NamedFile as NamedFileField
 from z3c.form import field
 from z3c.form.button import buttonAndHandler
 
@@ -25,7 +26,7 @@ def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
 
 class IImportDirectorySchema(form.Schema):
     """ Define fields used on the form """
-    csv_file = NamedFile(title=u"CSV file")
+    csv_file = NamedFileField(title=u"CSV file")
 
 
 class Import(form.Form):
@@ -84,6 +85,13 @@ class Import(form.Form):
                 response = urllib2.urlopen(image_url)
                 image = response.read()
                 attributes['image'] = NamedImage(image)
+
+            # Fetach PDF from URL
+            pdf_url = row[-2]
+            if pdf_url:
+                response = urllib2.urlopen(pdf_url)
+                pdf_file = response.read()
+                attributes['attachment_1'] = NamedFile(pdf_file)
 
             # Create event
             event = createContentInContainer(
