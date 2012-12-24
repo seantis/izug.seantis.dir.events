@@ -72,9 +72,9 @@ class Import(form.Form):
             # Unmapped fields are filled with defaults
             add_defaults(attributes, fieldmap)
 
-            # TODO:
-            # We cannot properly decode the coordinates (because of nested ").
-            attributes['coordinates_json'] = None
+            if attributes['coordinates_json']:
+                attributes['coordinates_json'] = \
+                    attributes['coordinates_json'].replace("'", '"')
 
             # Manipulate some attributes
             attributes['timezone'] = default_timezone()
