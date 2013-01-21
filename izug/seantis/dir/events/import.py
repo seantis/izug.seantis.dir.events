@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 from StringIO import StringIO
 import urllib2
@@ -18,8 +19,8 @@ from seantis.dir.base.xlsimport import add_defaults
 from seantis.dir.events.interfaces import IEventsDirectory
 
 
-categories = {
-    "any_event_type": "alle Veranstaltungen",
+categories1 = {
+    "any_event_type": "Alle Veranstaltungen",
     "Politik": "Politik",
     "exhibition_museum": "Ausstellung & Museum",
     "miscellaneous": "Diverses",
@@ -34,6 +35,13 @@ categories = {
     "economy": "Wirtschaft & Gewerbe",
     "brauchtum": "Brauchtum",
     "folkmusic": "Volksmusik",
+}
+
+categories2 = {
+    "huenenberg": u"Hünenberg",
+    "oberaegeri": u"Oberägeri",
+    "unteraegeri": u"Unterägeri",
+    "other_city": "Andere",
 }
 
 
@@ -95,12 +103,18 @@ class Import(form.Form):
                 attributes['coordinates_json'] = \
                     attributes['coordinates_json'].replace("'", '"')
 
+            # "What" category
             cats1 = []
             if attributes['cat1']:
                 for cat in attributes['cat1']:
                     if cat:
-                        cats1.append(categories[cat])
+                        cats1.append(categories1[cat])
             attributes['cat1'] = cats1
+
+            # "Where" category
+            if attributes['town']:
+                cat = categories2.get(attributes['town'], attributes['town'])
+                attributes['cat2'] = cat.capitalize()
 
             # Manipulate some attributes
             attributes['timezone'] = default_timezone()
