@@ -18,6 +18,25 @@ from seantis.dir.base.xlsimport import add_defaults
 from seantis.dir.events.interfaces import IEventsDirectory
 
 
+categories = {
+    "any_event_type": "alle Veranstaltungen",
+    "Politik": "Politik",
+    "exhibition_museum": "Ausstellung & Museum",
+    "miscellaneous": "Diverses",
+    "health_social": "Gesundheit & Soziales",
+    "classical_concert": "Konzert Klassik",
+    "pop_rock_jazz_concert": "Konzert Pop/Rock/Jazz",
+    "party": "Party",
+    "sports": "Sport",
+    "theater": "Theater / Tanz",
+    "tourism": "Tourismus",
+    "talk": "Vortrag / Lesung",
+    "economy": "Wirtschaft & Gewerbe",
+    "brauchtum": "Brauchtum",
+    "folkmusic": "Volksmusik",
+}
+
+
 def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
     csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
     for row in csv_reader:
@@ -75,6 +94,13 @@ class Import(form.Form):
             if attributes['coordinates_json']:
                 attributes['coordinates_json'] = \
                     attributes['coordinates_json'].replace("'", '"')
+
+            cats1 = []
+            if attributes['cat1']:
+                for cat in attributes['cat1']:
+                    if cat:
+                        cats1.append(categories[cat])
+            attributes['cat1'] = cats1
 
             # Manipulate some attributes
             attributes['timezone'] = default_timezone()
