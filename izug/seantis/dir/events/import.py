@@ -41,7 +41,7 @@ categories2 = {
     "huenenberg": u"Hünenberg",
     "oberaegeri": u"Oberägeri",
     "unteraegeri": u"Unterägeri",
-    "other_city": "Andere",
+    "other_city": "",
 }
 
 
@@ -113,8 +113,9 @@ class Import(form.Form):
 
             # "Where" category
             if attributes['town']:
-                cat = categories2.get(attributes['town'], attributes['town'])
-                attributes['cat2'] = cat.capitalize()
+                attributes['town'] = categories2.get(attributes['town'], attributes['town'])
+                attributes['town'] = attributes['town'].capitalize()
+                attributes['cat2'] = attributes['town']
 
             # Manipulate some attributes
             attributes['timezone'] = default_timezone()
