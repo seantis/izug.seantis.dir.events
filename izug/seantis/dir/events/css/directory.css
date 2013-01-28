@@ -923,3 +923,8 @@ div.olControlLayerSwitcher .layersDiv, div.olControlLayerSwitcher * {
    font-weight: normal;   
    font-size: 11px 
 }
+
+/* Hide coordinates tab */
+#contentview-locations {
+    display: none;   
+}
