@@ -2,6 +2,7 @@
 import csv
 from StringIO import StringIO
 import urllib2
+import json
 
 from Products.CMFCore.utils import getToolByName
 from five import grok
@@ -99,9 +100,17 @@ class Import(form.Form):
             # Unmapped fields are filled with defaults
             add_defaults(attributes, fieldmap)
 
-            if attributes['coordinates_json']:
-                attributes['coordinates_json'] = \
-                    attributes['coordinates_json'].replace("'", '"')
+            # Adjust coordinates
+            coordinates = attributes['coordinates_json']
+            if coordinates:
+                coordinates = coordinates.replace("'", '"')
+
+                cords = json.loads(coordinates)
+                latitude = cords[1][0]
+                longitude = cords[1][1]
+                cords[1][0] = longitude
+                cords[1][1] = latitude
+                attributes['coordinates_json'] = json.dumps(cords)
 
             # "What" category
             cats1 = []
