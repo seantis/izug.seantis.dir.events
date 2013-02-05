@@ -5,9 +5,10 @@ from Products.CMFCore.utils import getToolByName
 from collective.geo.settings.interfaces import IGeoSettings
 from izug.seantis.dir.events.guard import groups
 
+
 def setup_geo(site):
     registry = getUtility(IRegistry)
-    
+
     # note, the weird way lists below are used is due to the fact that
     # they break if they are replaced, so all updates must be in-place
     # it's probably due to the settings being proxied
@@ -36,15 +37,19 @@ def setup_geo(site):
     geo_settings.latitude = Decimal("47.164210081887184")
     geo_settings.zoom = Decimal("11")
 
+
 def setup_groups(site):
 
     group_tool = getToolByName(site, 'portal_groups')
+    existing_groups = group_tool.listGroupIds()
 
     for group, title in groups.items():
-        group_tool.addGroup(group, ['Reviewer'], [], title=title)
+        if group not in existing_groups:
+            group_tool.addGroup(group, ['Reviewer'], [], title=title)
+
 
 def custom_setup(context):
-    
+
     if 'izug/seantis' in context._profile_path:
         setup_geo(context.getSite())
         setup_groups(context.getSite())

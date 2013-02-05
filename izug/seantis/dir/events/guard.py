@@ -8,8 +8,9 @@ from Products.CMFCore.utils import getToolByName
 from seantis.dir.events.interfaces import IEventsDirectoryItem, IActionGuard
 
 groups = {
-    u'baar': u'Verwaltung Baar', 
+    u'baar': u'Verwaltung Baar',
     u'cham': u'Verwaltung Cham',
+    u'huenenberg': u'Verwaltung Hünenberg',
     u'menzingen': u'Verwaltung Menzingen',
     u'neuheim': u'Verwaltung Neuheim',
     u'oberaegeri': u'Verwaltung Oberägeri',
@@ -20,6 +21,7 @@ groups = {
     u'walchwil': u'Verwaltung Walchwil',
     u'andere-orte': u'Verwaltung Andere Orte'
 }
+
 
 class ZugActionGuard(grok.Adapter):
     grok.context(IEventsDirectoryItem)
@@ -58,7 +60,7 @@ class ZugActionGuard(grok.Adapter):
 
         for town in self.context.keywords(categories=['cat2']):
             town = town.lower()
-            
+
             town = town.replace(' ', '-')
 
             town = town.replace(u'ü', 'ue')
