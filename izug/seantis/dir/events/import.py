@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
+import logging
+log = logging.getLogger('seantis.dir.events')
+
 import csv
 from StringIO import StringIO
 import urllib2
 import json
+
+import HTMLParser
 
 from Products.CMFCore.utils import getToolByName
 from five import grok
@@ -64,6 +69,14 @@ class Import(form.Form):
 
     ignoreContext = True
 
+    parser = HTMLParser.HTMLParser()
+
+    infos = []
+
+    def readable_html(self, html):
+        html = html.replace('<br />', '\n')
+        return self.parser.unescape(html)
+
     @buttonAndHandler(u'Import', name='import')
     def import_csv(self, action):
 
@@ -119,11 +132,16 @@ class Import(form.Form):
 
             # "Where" category
             if attributes['town']:
-                attributes['town'] = categories2.get(attributes['town'], attributes['town'])
-                attributes['cat2'] = attributes['town']
+                attributes['town'] = categories2.get(
+                    attributes['town'], attributes['town']
+                )
+                attributes['cat2'] = [attributes['town']]
 
             # Manipulate some attributes
             attributes['timezone'] = default_timezone()
+            attributes['long_description'] = self.readable_html(
+                attributes['long_description']
+            )
 
             # Fetch image form URL
             image_url = row[-3]
@@ -143,6 +161,13 @@ class Import(form.Form):
             event = createContentInContainer(
                 self.context, fieldmap.typename, **attributes
             )
+
+            # Log the events which span multiple days, they need to manually
+            # adjusted by the client
+            if attributes['start'].date() != attributes['end'].date():
+                log.info(
+                    '"%s" spans multiple days' % event.absolute_url()
+                )
 
             # Publish event
             workflow_tool.doActionFor(event, 'submit')
