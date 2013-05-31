@@ -22,8 +22,8 @@
     <!-- Register an extension profile to make the product installable -->
     <genericsetup:registerProfile
         name="default"
-        title="izug.seantis.dir.events"
-        description="Integration of seantis.dir.events into izug"
+        title="iZug Integration for Seantis Dir Events"
+        description="Special Roles, Setup, Settings"
         directory="profiles/default"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot" 
