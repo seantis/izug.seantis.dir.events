@@ -19,11 +19,6 @@
     <!-- Grok the package to initialise schema interfaces and content classes -->
     <grok:grok package="." />
 
-    <!-- Resources -->
-    <browser:resourceDirectory
-        name="izug.seantis.dir.events.stylesheets"
-        directory="css"/>
-
     <!-- Register an extension profile to make the product installable -->
     <genericsetup:registerProfile
         name="default"
@@ -40,8 +35,5 @@
         title="custom setup code for izug.seantis.dir.events"
         description=""
         handler="izug.seantis.dir.events.setuphandlers.custom_setup" />
-
-    <!-- Diazo Theme -->
-    <plone:static name="izug.seantis.dir.events.theme" directory="theme" type="theme" />
 
 </configure>
