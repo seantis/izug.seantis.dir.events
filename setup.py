@@ -5,7 +5,7 @@ name = 'izug.seantis.dir.events'
 description = (
     "Integration of seantis.dir.events into izug."
 )
-version = '1.0rc1'
+version = '1.0rc2'
 
 
 def get_long_description():
